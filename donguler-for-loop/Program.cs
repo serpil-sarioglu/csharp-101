@@ -50,7 +50,31 @@ namespace donguler_for_loop
                 int intVal = int.Parse(ch.ToString());
                 if (intVal == 7)
                     break;
+            }
 
+            // HackerRank Challenges| Day 5 Loops 
+            int n0 = Convert.ToInt32(Console.ReadLine().Trim());
+            if (n0 >= 2 && n0 <= 20)
+            {
+                for (int i = 1; i <= 10; i++)
+                {
+                    int multiplyResult = n0 * i;
+                    Console.WriteLine(n0 + " x " + i + " = " + multiplyResult);
+                }
+            }
+            // HackerRank Challenges| Staircase 
+            int n1 = Convert.ToInt32(Console.ReadLine().Trim());
+            for (int i = 1; i <= n1; i++)
+            {
+                for (int j = i; j < n1; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write("#");
+                }
+                Console.WriteLine("");
             }
 
         }
