@@ -47,6 +47,41 @@ namespace diziler_array_sinifi_metodlari
             sayiDizisi[8] = 99;
             foreach (var sayi in sayiDizisi)
                 Console.WriteLine(sayi);
+
+            // HackerRank Challenge| Birthday Cake Candles 
+            // Girilen dizideki en büyük elamandan kaç tane olduğunu bulup sayısını döndüren program
+            Console.Write("Lütfen dizi boyutunu giriniz: ");
+            int candlesCount = Convert.ToInt32(Console.ReadLine());
+            int[] candles = new int[candlesCount];
+            for (int i = 0; i < candlesCount; i++)
+            {
+                Console.Write("Lütfen {0}. sayıyı giriniz: ", i + 1);
+                candles[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            int result = Result.birthdayCakeCandles(candles);
+            Console.WriteLine(result);
+        }
+    }
+    class Result
+    {
+        public static int birthdayCakeCandles(int[] candles)
+        {
+            int count = 0;
+            int maxHeight = 0;
+            for (int i = 0; i < candles.Length; i++)
+            {
+                // Dizideki en büyük sayı bulunur
+                if (candles[i] > maxHeight)
+                {
+                    maxHeight = candles[i];
+                    count = 0;
+                }
+                // Dizide bulunan en büyük sayının tekrar etme sayısı count a atanır
+                if (candles[i] == maxHeight)
+                    count++;
+            }
+            return count;
+
         }
     }
 }
