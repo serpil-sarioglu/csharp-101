@@ -16,7 +16,10 @@ namespace recursive_extension_metotlar
 
             Islemler instance = new();
             Console.WriteLine(instance.Expo(3, 4));//81
-            Console.WriteLine(instance.FibonacciSerisi(4));//f(4) = 3 (0,1,1,2,3,5,...) 
+            Console.WriteLine(instance.FibonacciSerisi(4));//f(4) = 3 (0,1,1,2,3,5,8,13,21,...) 
+
+            // HackerRank Challenges| Recursive Method for Calculating Factorial
+            Console.WriteLine(instance.Factorial(3));//6
 
             // Extension Metotlar
             // Extension metotlar static bir class içerisinde static bir metot olarak yazılmalılar.
@@ -56,6 +59,13 @@ namespace recursive_extension_metotlar
 
             return Expo(sayi, us - 1) * sayi;
         }
+        /*
+        FibonacciSerisi(4) çağrıldığında ne döner?
+        f(3)+f(2)
+        f(2)+f(1)+f(1)+f(0)
+        f(1)+f(0)+1+1+0
+        1+0+1+1=3
+        */
         public int FibonacciSerisi(int i)
         {
             if (i == 0)
@@ -66,12 +76,19 @@ namespace recursive_extension_metotlar
                 return FibonacciSerisi(i - 1) + FibonacciSerisi(i - 2);
         }
         /*
-        FibonacciSerisi(4) çağrıldığında ne döner?
-        f(3)+f(2)
-        f(2)+f(1)+f(1)+f(0)
-        f(1)+f(0)+1+1+0
-        1+0+1+1=3
+        factorial(4) = ?
+        factorial(3)*4
+        factorial(2)*3*4
+        factorial(1)*2*3*4
+        1*2*3*4 = 4! = 24    
         */
+        public int Factorial(int n)
+        {
+            if (n <= 1)
+                return 1;
+            return Factorial(n - 1) * n;
+        }
+
     }
     public static class Extension
     {
