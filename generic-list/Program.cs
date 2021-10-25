@@ -5,7 +5,7 @@ namespace generic_list
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             // List<T> class
             // System.Collections.Generic
@@ -106,6 +106,36 @@ namespace generic_list
             }
 
             yeniListe.Clear();
+
+            #region challenge
+            // HackerRank Challenges| Day 21: Generics
+            // Task: Write a single generic function named printArray; this function must take an array of generic elements as a parameter.
+            Console.Write("Dizi boyutunu giriniz: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] intArray = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("{0}. sayıyı giriniz: ", i + 1);
+                intArray[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.Write("Dizi boyutunu giriniz: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            string[] stringArray = new string[n];
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("{0}. ifadeyi giriniz: ", i + 1);
+                stringArray[i] = Console.ReadLine();
+            }
+
+            PrintArray<int>(intArray);
+            PrintArray<string>(stringArray);
+            #endregion
+        }
+        public static void PrintArray<T>(T[] array)
+        {
+            foreach (T item in array)
+                Console.WriteLine(item);
         }
     }
     public class Kullanicilar
