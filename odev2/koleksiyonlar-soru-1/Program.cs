@@ -5,10 +5,10 @@ namespace koleksiyonlar_soru_1
 {
     class Program
     {
-        // Soru - 1: Klavyeden girilen 20 adet pozitif sayının asal ve asal olmayan olarak 2 ayrı listeye atın. (ArrayList sınıfını kullanara yazınız.)
+        // Soru - 1: Klavyeden girilen 20 adet pozitif sayının asal ve asal olmayan olarak 2 ayrı listeye atın. (ArrayList sınıfını kullanarak yazınız.)
         // Negatif ve numeric olmayan girişleri engelleyin.
         // Her bir dizinin elemanlarını büyükten küçüğe olacak şekilde ekrana yazdırın.
-        // Her iki dizinin eleman sayısını ve ortalamasını ekrana yazdırın.
+        // Her bir dizinin eleman sayısını ve ortalamasını ekrana yazdırın.
         static void Main(string[] args)
         {
 
@@ -31,9 +31,9 @@ namespace koleksiyonlar_soru_1
                         sayilarListesi.Add(sayi);
                 }
             }
-            catch (Exception exc)
+            catch (FormatException exc)
             {
-                throw new Exception("Hata oluştu! Lütfen rakam giriniz.");
+                Console.WriteLine("Hata oluştu! Lütfen rakam giriniz. \n" + exc.Message);
             }
 
             ArrayList asalSayilarListesi = new ArrayList();
@@ -49,6 +49,7 @@ namespace koleksiyonlar_soru_1
 
             asalSayilarListesi.Sort();
             asalSayilarListesi.Reverse();
+            Console.WriteLine();
             Console.WriteLine("Asal sayıların büyükten küçüğe sıralı listesi: ");
             ListeYazdir(asalSayilarListesi);
             Console.WriteLine("Asal sayılar listesinin eleman sayısı: {0}  ve ortalaması: {1}",
